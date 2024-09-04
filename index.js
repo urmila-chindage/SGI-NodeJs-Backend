@@ -20,9 +20,10 @@ mongoose.connect(process.env.MONGO_DB_URL).then(
 () => { console.log('Database is connected') },
 err => { console.log('There is problem while connecting database ' + err) }
 );
-
+// Setup for the server port number
+const port = process.env.PORT || 4000;
 app.get('/', (req, res) => res.send('Server is Running!'))
-app.listen(4000, () => console.log('Example app listening on port 4000!'))
+app.listen(console.log('Server Lisening On Port : ' + port))
 
 /* app.use(express.static(path.join(__dirname, "build")));
 app.get("/", (req, res) => {
