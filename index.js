@@ -21,10 +21,13 @@ mongoose.connect(process.env.MONGO_DB_URL).then(
 err => { console.log('There is problem while connecting database ' + err) }
 );
 // Setup for the server port number
-const port = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4000
 app.get('/', (req, res) => res.send('Server is Running!'))
-app.listen(console.log('Server Lisening On Port : ' + port))
+//app.listen(console.log('Server Lisening On Port : ' + port))
 
+app.listen(PORT,()=>{
+  console.log(`Server start at port no ${PORT}`)
+})
 /* app.use(express.static(path.join(__dirname, "build")));
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "build/index.html"));
